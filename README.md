@@ -19,10 +19,6 @@ This is the repo of the backend that manages data for the the simple job applica
 - `npm run build` or `yarn build` to build for deployment.
 - `npm run start` or `yarn start` to start the built app. 
 
-## Switch to another file
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
 ## API Endpoints
 
 We have 4 API endpoints plus a base endpoint `GET /api`. There is an endpoint for creating an job application, one for viewing the candidates, one for viewing a particular candidate and another for updating the candidate's job application status. They will be listed respective of the order they were mentioned above.
