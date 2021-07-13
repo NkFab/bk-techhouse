@@ -7,6 +7,8 @@ const URL = process.env.URL || "mongodb://localhost/NODE_APP";
 mongoose.connect(URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 const db = mongoose.connection;
