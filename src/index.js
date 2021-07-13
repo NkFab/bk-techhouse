@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api", routers);
-app.get("/", (_req, res) => {
+app.get("/api", (_req, res) => {
   return res.status(200).json({
     data: { message: "Welcome to Simple Job Application API" },
   });
