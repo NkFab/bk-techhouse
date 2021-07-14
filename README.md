@@ -2,7 +2,8 @@
 
 This is the repo of the backend that manages data for the the simple job application system web app. 
 
-
+[![Build Status](https://travis-ci.org/NkFab/bk-techhouse.svg?branch=main)](https://travis-ci.org/NkFab/bk-techhouse)
+[![Coverage Status](https://coveralls.io/repos/github/NkFab/bk-techhouse/badge.svg?branch=main)](https://coveralls.io/github/NkFab/bk-techhouse?branch=main)
 ## Setup
 
 1. Clone the app from github using the following commands:
