@@ -16,4 +16,23 @@ app.use("*", (_req, res) =>
     message: "API endpoint not found!",
   })
 );
+
+if (app.get("env") === "development") {
+  app.use(function (err, _req, res, _next) {
+    res.status(err.status || 500);
+    res.render("error", {
+      message: err.message,
+      error: err,
+    });
+  });
+}
+
+app.use((err, _req, res, _next) => {
+  res.status(err.status || 500);
+  res.render("error", {
+    message: err.message,
+    error: {},
+  });
+});
+
 export default app;
