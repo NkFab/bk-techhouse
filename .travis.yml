@@ -9,7 +9,7 @@ branches:
   only:
     - main
 install:
-  - npm ci
+  - npm i
   # keep the npm cache around to speed up installs
 script:
   - npm run test
