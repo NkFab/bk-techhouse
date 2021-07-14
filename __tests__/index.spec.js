@@ -1,26 +1,15 @@
 import request from './helpers/request';
 
-describe('Name of the group', () => {
-    describe('GET /', () => {
-        test('should respond with json data', () => {
-            return request.get('/').then(res => {
-                const {
-                    message
-                } = res.body
-                expect(res.status).toEqual(200)
-                expect(message).toEqual('Hello world!')
-            })
-        })
-    })
-    describe('GET /****', () => {
-        test('should respond with 404', () => {
-            return request.get('/hello-world').then(res => {
-                const {
-                    message
-                } = res.body
-                expect(res.status).toEqual(404)
-                expect(message).toEqual('API endpoint not found!')
-            })
-        })
-    })
+
+describe("Sneaker City Server", () => {
+  describe("GET /", () => {
+    it("Should return Welcome to Sneaker city API", (done) => {
+      request.get("/api").expect(200).end(done);
+    });
+  });
+  describe("GET /unexistent route", () => {
+    it("Should return API endpoint not found", (done) => {
+      request.get("/whatever").expect(404).end(done);
+    });
+  });
 });
