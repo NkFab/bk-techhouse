@@ -4,13 +4,13 @@
   "description": "NodeJs REST API",
   "main": "app.js",
   "scripts": {
+    "build": "npm run clean:dist && npm run build-server",
+    "start": "node ./dist",
+    "dev": "NODE_ENV=development nodemon --exec babel-node ./src",
     "test": "NODE_ENV=test jest --collect-coverage --detectOpenHandles",
     "coveralls": "NODE_ENV=test jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "dev": "NODE_ENV=development nodemon --exec babel-node ./src/app.js",
     "clean:dist": "rm -rf dist && mkdir dist",
-    "build-server": "babel -d ./dist ./src",
-    "build": "npm run clean:dist && npm run build-server",
-    "start": "node ./dist/app.js"
+    "build-server": "babel -d ./dist ./src"
   },
   "keywords": [
     "NodeJS",
