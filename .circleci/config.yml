@@ -33,7 +33,7 @@ jobs:
           command: npm test
           name: Run Jest and collect coverage
           command: jest --collectCoverage=true
-      -store_artifacts:
+      - store_artifacts:
           path: coverage
 
 workflows:
