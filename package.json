@@ -4,13 +4,13 @@
   "description": "NodeJs REST API",
   "main": "app.js",
   "scripts": {
-    "build": "npm run clean:dist && npm run build-server",
-    "start": "node ./dist",
-    "dev": "NODE_ENV=development nodemon --exec babel-node ./src",
     "test": "NODE_ENV=test jest --collect-coverage --detectOpenHandles",
     "coveralls": "NODE_ENV=test jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "dev": "NODE_ENV=development nodemon --exec babel-node ./src/app.js",
     "clean:dist": "rm -rf dist && mkdir dist",
-    "build-server": "babel -d ./dist ./src"
+    "build-server": "babel -d ./dist ./src",
+    "build": "npm run clean:dist && npm run build-server",
+    "start": "node ./dist/app.js"
   },
   "keywords": [
     "NodeJS",
@@ -33,22 +33,21 @@
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
-    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
-    "@types/jest": "^26.0.17",
-    "babel-jest": "^24.8.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "3.1.1",
-    "jest": "^24.8.0",
     "nodemon": "^2.0.0",
-    "supertest": "^4.0.2"
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "supertest": "^4.0.2",
+    "@types/jest": "^26.0.17"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test"
+      "pre-commit": "npm run test"
     }
   }
 }
