@@ -1,21 +1,14 @@
-# sudo: false
-# language: node_js
-# node_js:
-#   - "v12.16.2"
-# cache:
-#   directories:
-#     - "$HOME/.npm"
-# branches:
-#   only:
-#     - main
-# install:
-#   - npm ci
-#   # keep the npm cache around to speed up installs
-# script:
-#   - npm run coveralls
-
+sudo: false
 language: node_js
 node_js:
-- "stable"
-after_success:
-- npm run coveralls
+  - "stable"
+cache:
+  directories:
+    - "$HOME/.npm"
+branches:
+  only:
+    - main
+install:
+  - npm ci
+script:
+  - npm run coveralls
