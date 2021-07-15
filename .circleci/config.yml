@@ -30,9 +30,7 @@ jobs:
       #     pkg-manager: yarn 
       - run:
           name: Run tests
-          command: jest --collectCoverage=true
-      - store_artifacts:
-          path: coverage
+          command: npm test
 
 workflows:
   # Below is the definition of your workflow.
