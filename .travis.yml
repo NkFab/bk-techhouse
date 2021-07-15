@@ -1,13 +1,7 @@
 language: node_js
 node_js:
-  - "stable"
-cache:
-  directories:
-    - "$HOME/.npm"
-branches:
-  only:
-    - main
-install:
-  - npm ci
+ - "stable"
+before_script:
+ - npm install
 script:
-  - npm run coveralls
+ - npm test
