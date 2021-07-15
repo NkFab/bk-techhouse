@@ -11,4 +11,4 @@ install:
   - npm ci
   # keep the npm cache around to speed up installs
 script:
-  - npm run test
+  - npm run coveralls
